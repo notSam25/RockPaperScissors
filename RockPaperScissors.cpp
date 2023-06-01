@@ -1,32 +1,35 @@
 /* RockPaperScissors.cpp
  * Made to teach a friend how to use Switch statments.
-*/
+ */
 
 #include <iostream>
 #include <String>
 #include <stdio.h>
 
-enum PlayerInput {
-    ROCK = 1,
+enum PlayerInput
+{
+    ROCK = 0,
     PAPER,
     SCISSORS
 };
 
-int main() {
+int main()
+{
     srand(time(0));
     std::string input;
 
     std::cout << "Would you like to play? y/n ";
     std::cin >> input;
 
-    while (input == "y" || input == "Y") {
-        int RandomNumber = rand() % 3 + 1, PlayerSelection = 0;
+    while (input == "y" || input == "Y")
+    {
+        int RandomNumber = (rand() % 3), PlayerSelection = 0;
         bool WonRound = false;
 
         std::cout << std::endl
                   << "(r)ock (p)aper or s(cissors)?" << std::endl;
         std::cin >> input;
-        
+
         if (input == "r")
             PlayerSelection = 1;
         else if (input == "p")
